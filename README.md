@@ -40,6 +40,7 @@ Everything is data-driven; no component edits needed for normal updates.
 | `VITE_RESUME_URL` | Optional. By default the Resume button opens the built-in printable page `/resume.html` (generated from your data files; use Print → Save as PDF). Set this to your own PDF, e.g. `/resume.pdf` in `public/`, to override it. |
 | `VITE_PHOTO_URL` | Optional portrait shown in About, e.g. `/photo.jpg` (put the file in `public/`). Hidden when empty. |
 | `VITE_PLAUSIBLE_DOMAIN` | Optional. Your site's domain to enable privacy-friendly Plausible analytics. Nothing loads when empty. |
+| `VITE_GOATCOUNTER_URL` | Optional. GoatCounter endpoint (e.g. `https://your-code.goatcounter.com/count`) to record page views and show an anonymous public counter in the footer. |
 | `VITE_SITE_URL` | Your deployed URL without a trailing slash (e.g. `https://jaydengle.vercel.app`). Needed so LinkedIn/WhatsApp link previews can load `public/og.png`. |
 | `VITE_STATUS` | Hero status label, e.g. `OPEN TO DEVOPS OPPORTUNITIES`. |
 | `VITE_REPO_NEXOPS`, `VITE_REPO_PIPELINE`, `VITE_REPO_INFRAWATCH` | Real GitHub repo URLs for each project. |
@@ -71,6 +72,7 @@ The build output is a static site in `dist/`.
 
 - **Vercel / Netlify / Cloudflare Pages:** import the repo, build command `npm run build`, output directory `dist`, and add your `VITE_*` variables in the project settings.
 - **GitHub Pages:** the included Actions workflow builds and deploys `dist/` on pushes to `main`. In **Settings → Pages**, set the source to **GitHub Actions**. The Vite base path is configured for this repository's project URL.
+- **Visitor counter:** create a site at [GoatCounter](https://www.goatcounter.com/), enable **Allow adding visitor counts on your website**, then add `VITE_GOATCOUNTER_URL` as a repository Actions variable under **Settings → Secrets and variables → Actions → Variables**. It shows aggregate views and anonymous analytics (such as referrers); it cannot identify visitors by name.
 - **S3 + CloudFront:** `npm run build` then sync `dist/` to the bucket.
 
 ## Interactive features

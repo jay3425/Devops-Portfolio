@@ -13,6 +13,15 @@ if (plausible) {
   document.head.appendChild(s)
 }
 
+const goatCounter = import.meta.env.VITE_GOATCOUNTER_URL?.trim()
+if (goatCounter) {
+  const s = document.createElement('script')
+  s.defer = true
+  s.dataset.goatcounter = goatCounter
+  s.src = 'https://gc.zgo.at/count.js'
+  document.head.appendChild(s)
+}
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />

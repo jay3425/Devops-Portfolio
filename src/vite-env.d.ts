@@ -10,6 +10,7 @@ interface ImportMetaEnv {
   readonly VITE_PHOTO_URL?: string
   readonly VITE_MUSIC_URL?: string
   readonly VITE_PLAUSIBLE_DOMAIN?: string
+  readonly VITE_GOATCOUNTER_URL?: string
   readonly VITE_WEB3FORMS_KEY?: string
   readonly VITE_FORM_ENDPOINT?: string
   readonly VITE_REPO_NEXOPS?: string
