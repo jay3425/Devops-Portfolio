@@ -72,7 +72,7 @@ The build output is a static site in `dist/`.
 
 - **Vercel / Netlify / Cloudflare Pages:** import the repo, build command `npm run build`, output directory `dist`, and add your `VITE_*` variables in the project settings.
 - **GitHub Pages:** the included Actions workflow builds and deploys `dist/` on pushes to `main`. In **Settings → Pages**, set the source to **GitHub Actions**. The Vite base path is configured for this repository's project URL.
-- **Visitor counter:** create a site at [GoatCounter](https://www.goatcounter.com/), enable **Allow adding visitor counts on your website**, then add `VITE_GOATCOUNTER_URL` as a repository Actions variable under **Settings → Secrets and variables → Actions → Variables**. It shows aggregate views and anonymous analytics (such as referrers); it cannot identify visitors by name.
+- **Visitor counter:** the Pages workflow is configured for `https://jaydengle.goatcounter.com/count`. In GoatCounter site settings, enable **allow using the visitor counter** to show the footer count. GoatCounter provides aggregate views and anonymous analytics (such as referrers); it cannot identify visitors by name.
 - **S3 + CloudFront:** `npm run build` then sync `dist/` to the bucket.
 
 ## Interactive features

@@ -30,7 +30,7 @@ jobs:
       - name: Build site
         run: npm run build
         env:
-          VITE_GOATCOUNTER_URL: ${{ vars.VITE_GOATCOUNTER_URL }}
+          VITE_GOATCOUNTER_URL: https://jaydengle.goatcounter.com/count
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
