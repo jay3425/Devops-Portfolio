@@ -1,7 +1,6 @@
 import { ArrowUp } from 'lucide-react'
 import { lazy, Suspense } from 'react'
 import { site } from '../data/site'
-import VisitorCount from './VisitorCount'
 import { Reveal } from './ui'
 
 const Monogram = lazy(() => import('./three/Monogram'))
@@ -28,7 +27,6 @@ export default function Footer() {
           <div className="rounded-full bg-panel p-2.5 text-panel-ink shadow-pill ring-1 ring-white/10">
             <div className="flex flex-col items-center justify-between gap-1 rounded-full border-2 border-white/80 px-6 py-5 font-mono text-[11px] uppercase tracking-[0.25em] sm:flex-row sm:px-10 sm:text-xs">
               <span>{site.status}</span>
-              <VisitorCount />
               <span className="text-panel-mute">© {YEAR} {site.name}</span>
             </div>
           </div>
