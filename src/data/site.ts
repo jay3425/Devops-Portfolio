@@ -2,6 +2,10 @@ import { notes } from './notes'
 
 const env = import.meta.env
 const clean = (v?: string) => (v && v.trim() ? v.trim() : undefined)
+const publicUrl = (value: string) => value.startsWith('/') ? `${env.BASE_URL}${value.slice(1)}` : value
+const resumeUrl = clean(env.VITE_RESUME_URL) ?? '/resume.html'
+const photoUrl = clean(env.VITE_PHOTO_URL) ?? '/photo.jpg'
+const musicUrl = clean(env.VITE_MUSIC_URL)
 
 /** Central, editable site configuration. Values come from .env.local (see .env.example). */
 export const site = {
@@ -16,10 +20,10 @@ export const site = {
   githubUser: clean(env.VITE_GITHUB_URL)?.match(/github\.com\/([A-Za-z0-9-]+)/)?.[1],
   linkedin: clean(env.VITE_LINKEDIN_URL),
   /** Defaults to the built-in printable resume page (/resume.html). Set VITE_RESUME_URL to use your own PDF. */
-  resume: clean(env.VITE_RESUME_URL) ?? '/resume.html',
-  photo: clean(env.VITE_PHOTO_URL) ?? '/photo.jpg',
+  resume: publicUrl(resumeUrl),
+  photo: publicUrl(photoUrl),
   /** Optional custom track (e.g. /music.mp3 in public/). Without it a generated ambient loop is used. */
-  music: clean(env.VITE_MUSIC_URL),
+  music: musicUrl ? publicUrl(musicUrl) : undefined,
   web3formsKey: clean(env.VITE_WEB3FORMS_KEY),
   formEndpoint: clean(env.VITE_FORM_ENDPOINT),
 }

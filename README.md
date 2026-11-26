@@ -70,7 +70,7 @@ With neither configured, a valid submission shows an honest “not sent” notic
 The build output is a static site in `dist/`.
 
 - **Vercel / Netlify / Cloudflare Pages:** import the repo, build command `npm run build`, output directory `dist`, and add your `VITE_*` variables in the project settings.
-- **GitHub Pages:** build locally or in Actions, publish `dist/`. If served from a sub-path, set `base` in `vite.config.ts`.
+- **GitHub Pages:** the included Actions workflow builds and deploys `dist/` on pushes to `main`. In **Settings → Pages**, set the source to **GitHub Actions**. The Vite base path is configured for this repository's project URL.
 - **S3 + CloudFront:** `npm run build` then sync `dist/` to the bucket.
 
 ## Interactive features
