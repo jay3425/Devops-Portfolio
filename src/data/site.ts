@@ -2,7 +2,7 @@ import { notes } from './notes'
 
 const env = import.meta.env
 const clean = (v?: string) => (v && v.trim() ? v.trim() : undefined)
-const publicUrl = (value: string) => value.startsWith('/') ? `${env.BASE_URL}${value.slice(1)}` : value
+export const publicUrl = (value: string) => value.startsWith('/') ? `${env.BASE_URL}${value.slice(1)}` : value
 const resumeUrl = clean(env.VITE_RESUME_URL) ?? '/resume.html'
 const photoUrl = clean(env.VITE_PHOTO_URL) ?? '/photo.jpg'
 const musicUrl = clean(env.VITE_MUSIC_URL)
