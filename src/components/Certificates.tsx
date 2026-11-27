@@ -31,7 +31,7 @@ export default function Certificates() {
             {certificates.map((c, i) => (
               <Reveal key={c.id} delay={i * 0.08}>
                 <li className="flex h-full list-none flex-col rounded-[2rem] bg-panel p-5 text-panel-ink shadow-pill ring-1 ring-white/10">
-                  {c.image && <img src={c.image} alt={`${c.title} certificate preview`} loading="lazy" className="mb-4 aspect-[4/3] w-full rounded-2xl object-cover" />}
+                  {c.image && <img src={publicUrl(c.image)} alt={`${c.title} certificate preview`} loading="lazy" className="mb-4 aspect-[3/2] w-full rounded-2xl bg-white object-contain" />}
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-accent">{c.issuer}</p>
                   <h3 className="display mt-2 text-3xl uppercase leading-none">{c.title}</h3>
                   <p className="mt-2 font-mono text-xs text-panel-mute">{c.date}{c.credentialId ? ` · ID ${c.credentialId}` : ''}</p>
@@ -59,7 +59,7 @@ export default function Certificates() {
           <div className="p-5 sm:p-8">
             <h3 id="cert-preview-title" className="display pr-12 text-3xl uppercase">{preview.title}</h3>
             <p className="mb-4 font-mono text-xs text-panel-mute">{preview.issuer} · {preview.date}</p>
-            {preview.image && <img src={preview.image} alt={`${preview.title} certificate`} className="w-full rounded-2xl" />}
+            {preview.image && <img src={publicUrl(preview.image)} alt={`${preview.title} certificate`} className="w-full rounded-2xl" />}
           </div>
         )}
       </Modal>
