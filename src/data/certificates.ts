@@ -23,6 +23,6 @@ export const certificates: Certificate[] = [
     date: 'Nov 2026',
     credentialId: '9aeeb3dfdae346bb9f7e41dd197da198',   // optional
     url: 'https://courses.cognitiveclass.ai/certificates/9aeeb3dfdae346bb9f7e41dd197da198', // optional
-    image: '/certs/docker-essentials.jpg',   // optional
+    image: '/docker-essentials.jpg',   // optional
   },
 ]
