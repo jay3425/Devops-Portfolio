@@ -2,6 +2,7 @@ import { Award, ExternalLink, Eye } from 'lucide-react'
 import { useState } from 'react'
 import { certificates, type Certificate } from '../data/certificates'
 import { Hairline, Modal, Reveal, SectionLabel } from './ui'
+import { publicUrl } from '../data/site'
 
 export default function Certificates() {
   const [preview, setPreview] = useState<Certificate | null>(null)
